@@ -1,0 +1,33 @@
+{
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
+    "tsconfig.base.json": "*",
+    "tslint.json": "*",
+    ".eslintrc.json": "*",
+    "nx.json": "*"
+  },
+  "affected": { "defaultBase": "master" },
+  "npmScope": "sample-monorepo",
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+    }
+  },
+  "projects": {
+    "sample-angular": { "tags": [] },
+    "sample-angular-e2e": {
+      "tags": [],
+      "implicitDependencies": ["sample-angular"]
+    },
+    "sample-react": { "tags": [] },
+    "sample-react-e2e": {
+      "tags": [],
+      "implicitDependencies": ["sample-react"]
+    },
+    "lib-shared": { "tags": [] },
+    "lib-angular": { "tags": [] },
+    "lib-react": { "tags": [] }
+  }
+}
